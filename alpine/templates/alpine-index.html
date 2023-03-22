@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang=“en”>
+    <head>
+        <meta charset=“UTF-8”>
+        <meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
+        <meta http-equiv=“X-UA-Compatible” content=“ie=edge”>
+
+        <title>Django - alpine.js</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+
+    <body>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-8">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col rounded shadow-sm bg-white overflow-hidden border-slate-300 border-2 ml-6 mt-6">
+                <!-- Card Header -->
+                <div class="py-4 px-5 lg:px-6 w-full bg-gray-50">
+                    <h3 class="font-medium">
+                        Counter
+                    </h3>
+                </div>
+            <!-- END Card Header -->
+
+                <!-- Card Body -->
+                <div class="p-5 lg:p-6 grow w-full" x-data="{ count: 0 }">
+                    <p>
+                        Current count: <span x-text="count"></span>
+                    </p>
+                    <button x-on:click="count++" type="button" class="mt-6 inline-flex justify-center items-center space-x-2 border font-semibold rounded-lg px-4 py-2 leading-6 border-blue-700 bg-blue-700 text-white hover:text-white hover:bg-blue-600 hover:border-blue-600 focus:ring focus:ring-blue-400 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700 dark:focus:ring-blue-400 dark:focus:ring-opacity-90">
+                        Increment count
+                    </button>
+                </div>
+                <!-- END Card Body -->
+                <!-- Card Footer -->
+            </div>
+            <!-- END Card -->
+
+            <!-- Card 2 -->
+            <div class="flex flex-col rounded shadow-sm bg-white overflow-hidden border-slate-300 border-2 mt-6">
+                <!-- Card Header -->
+                <div class="py-4 px-5 lg:px-6 w-full bg-gray-50">
+                    <h3 class="font-medium">
+                        Card Title
+                    </h3>
+                </div>
+                <!-- END Card Header -->
+
+                <!-- Card Body -->
+                <div class="p-5 lg:p-6 grow w-full">
+                    <p>
+                        The height of all cards are auto adjusted based on the available space.
+                    </p>
+                </div>
+                <!-- END Card Body -->
+            </div>
+            <!-- END Card -->
+
+            <!-- Card 3 -->
+            <div class="flex flex-col rounded shadow-sm bg-white overflow-hidden border-slate-300 border-2 mr-6 mt-6">
+                <!-- Card Header -->
+                <div class="py-4 px-5 lg:px-6 w-full bg-gray-50">
+                    <h3 class="font-medium">
+                        Card Title
+                    </h3>
+                </div>
+                <!-- END Card Header -->
+
+                <!-- Card Body -->
+                <div class="p-5 lg:p-6 grow w-full">
+                    <p>
+                        Content..
+                    </p>
+                </div>
+                <!-- END Card Body -->
+            </div>
+            <!-- END Card -->
+
+        </div>
+    </body>
+</html>
