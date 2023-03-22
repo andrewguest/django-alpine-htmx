@@ -1,0 +1,56 @@
+name: Code formatting checks
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  python-black:
+    name: Format code with Black
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run black formatter checks
+        uses: psf/black@stable
+        with:
+          src: "./"
+          options: "--check --diff --color"
+          jupyter: true
+
+  flake8-lint:
+    runs-on: ubuntu-latest
+    name: Flake8 checks
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+
+  python-isort:
+    name: Fomat code with isort
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run isort formatter checks
+        uses: isort/isort-action@v1.0.0
+        with:
+          configuration: "--check --diff --color"
+          requirementsFiles: "requirements.txt"
+
+  mypy-checks:
+    name: Type check with mypy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run mypy checks
+        uses: jpetrucciani/mypy-check@master
+        with:
+          mypy_flags: "--config-file pyproject.toml"
