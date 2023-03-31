@@ -22,4 +22,7 @@ urlpatterns = [
         "alpine/", include("alpine.urls")
     ),  # alpine app URLs starting at /alpine/
     path("htmx/", include("htmx.urls")),  # htmx app URLs starting at /htmx/
+    path(
+        "basic/", include("basic_html.urls")
+    ),  # basic HTML app URLs starting at /basic/
 ]
